@@ -76,7 +76,6 @@ void play_game()
 	char grid[HARD][HARD];
 	char grid2[HARD][HARD];
 	bool won = true;
-	begin:
 	cin >> choice;
 	while (true)
 	{
@@ -133,7 +132,6 @@ void play_game()
 			initialise_board(grid);
 			initialise_disp_board(grid2);
 			generate_mines(grid, mines_generated);
-			print_board(grid);
 			while (true)
 			{
 				flag_counter(grid, grid2);
@@ -177,7 +175,6 @@ void play_game()
 			initialise_board(grid);
 			initialise_disp_board(grid2);
 			generate_mines(grid, mines_generated);
-			print_board(grid);
 			while (true)
 			{
 				flag_counter(grid, grid2);
@@ -213,7 +210,7 @@ void play_game()
 			break;
 		default:
 			cout << "Enter a valid choice" << endl; 
-			goto begin; // in case user enters an invalid input at the start of the game
+			cin >> choice; // in case user enters an invalid input at the start of the game
 			break;
 		}
 	}
